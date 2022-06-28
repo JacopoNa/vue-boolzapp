@@ -1,0 +1,69 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+}
+
+.app-container {
+    margin: 0 auto;
+    background-color: white;
+    width: 80%;
+    min-width: 1000px;
+    height: 95%;
+    display: flex;
+}
+
+.left-app {
+    width: 35%;
+}
+
+.right-app {
+    width: 65%;
+}
+
+.user {
+    height: 10%;
+    background-color: antiquewhite;
+}
+
+.notifications {
+    height: 10%;
+    background-color: lightblue;
+}
+
+.search-chat {
+    height: 5%;
+    background-color: lightcoral;
+}
+
+.chat-list {
+    height: 75%;
+    background-color: lightpink;
+}
+
+.contact {
+    height: 10%;
+    background-color: lightgreen;
+}
+
+.chat {
+    height: 80%;
+    background-color: lightskyblue;
+}
+
+.message-input {
+    height: 10%;
+    background-color: lightslategray;
+}
+
+
+
+

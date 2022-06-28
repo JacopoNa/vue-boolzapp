@@ -30,6 +30,7 @@ body {
     width: 80%;
     min-width: 1000px;
     height: 95%;
+    min-height: 700px;
     display: flex;
 }
 
@@ -102,8 +103,23 @@ ul {
 }
 
 .search-chat input {
-    width: 97%;
+    width: 80%;
     border: none;
+    border-radius: 5px;
+}
+
+.search-chat i {
+    color: grey;
+    padding: 4px 10px;
+    font-size: 20px;
+    width: 20%;
+}
+
+.search-chat div {
+    background-color: white;
+    width: 80%;
+    display: flex;
+    border-radius: 5px;
 }
 
 .chat-list ul li {
@@ -155,6 +171,37 @@ ul {
 .chat {
     height: 80%;
     background-image: url("../img/mine.jpg");
+}
+
+.messages-container {
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-container .message {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    min-width: 40%;
+    max-width: 50%;
+    margin-bottom: 10px;
+}
+
+.chat .info-message {
+    font-size: 10px;
+    color: grey;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+}
+
+.messages-container .green {
+    background-color: #d5f9ba;
+    align-self: flex-end;
 }
 
 .message-input {

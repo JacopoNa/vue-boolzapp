@@ -8,8 +8,12 @@
 
 var app = new Vue(
 	{
-		el: 'root',
+		el: '#root',
 		data: {
+			userInfo: {
+				name: 'Nome Utente',
+				avatar: '_io'
+			},
 			contacts: [
 				{
 					name: 'Michele',

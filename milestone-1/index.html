@@ -18,34 +18,95 @@
                 <!-- left app -->
                 <div class="left-app">
                     <div class="user">
-                        user
+                        <div class="user-info">
+                            <div class="user-image">
+                                <img :src=" 'img/avatar' + userInfo.avatar + '.jpg' " alt="nome">
+                            </div>
+                            <span>{{ userInfo.name }}</span>
+                        </div>
+
+                        <div class="user-icons">
+                            <span class="ms-icon">
+                                <i class="fa-regular fa-circle-notch"></i>
+                            </span>
+                            <span class="ms-icon">
+                                <i class="fa-solid fa-message"></i>
+                            </span>
+                            <span class="ms-icon">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="notifications">
-                        notifications
+                        <span class="notifications-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </span>
+                        <div>
+                            Ricevi notifiche di nuovi messaggi
+                            <div class="underline">
+                                Attiva notifiche desktop
+                            </div>
+                        </div>
+                        
                     </div>
 
                     <div class="search-chat">
-                        search
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <div class="chat-list">
-                        list
+                        <ul>
+                            <li v-for="(contact,index) in contacts">
+                                <img :src=" 'img/avatar' + contacts[index].avatar + '.jpg' " alt="contacts[index].name">
+                                <span>{{ contacts[index].name }}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- right app -->
                 <div class="right-app">
                     <div class="contact">
-                        contact
+                        <div class="left-contact">
+                            <div class="user-image">
+                                <img src="img/avatar_3.jpg" alt="nome">
+                            </div>
+                            <div>
+                                <span>Samuele</span><br>
+                                <span class="access">Ultimo accesso oggi alle</span>
+                            </div>
+                        </div>
+
+                        <div class="right-contact">
+                            <div class="user-icons">
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </span>
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="chat">
-                        chat
+                        
                     </div>
 
                     <div class="message-input">
-                        message
+                        <div class="user-icons">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+
+                        <input type="text" placeholder="Scrivi un mesaggio">
+
+                        <div class="user-icons">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
 

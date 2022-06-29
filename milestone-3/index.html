@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolzapp</title>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="root">
+        <div class="wrapper">
+            <div class="app-container">
+                
+                <!-- left app -->
+                <div class="left-app">
+                    <div class="user">
+                        <div class="user-info">
+                            <div class="user-image">
+                                <img :src=" 'img/avatar' + userInfo.avatar + '.jpg' " alt="nome">
+                            </div>
+                            <span>{{ userInfo.name }}</span>
+                        </div>
+
+                        <div class="user-icons">
+                            <span class="ms-icon">
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </span>
+                            <span class="ms-icon">
+                                <i class="fa-solid fa-message"></i>
+                            </span>
+                            <span class="ms-icon">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="notifications">
+                        <span class="notifications-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </span>
+                        <div>
+                            Ricevi notifiche di nuovi messaggi
+                            <a class="underline" href="#">
+                                Attiva notifiche desktop
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="search-chat">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <div class="chat-list">
+                        <ul>
+                            <li @click="selectChat(index)" v-for="(contact,index) in contacts" :class="{ 'selected' : (currentContact === index)}">
+                                <img :src=" 'img/avatar' + contacts[index].avatar + '.jpg' " alt="contacts[index].name">
+                                <span>{{ contacts[index].name }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- right app -->
+                <div class="right-app">
+                    <!-- contact -->
+                    <div class="contact">
+                        <div class="left-contact">
+                            <div class="user-image">
+                                <img :src=" 'img/avatar' + contacts[currentContact].avatar + '.jpg' " alt="contacts[currentContact].name">
+                            </div>
+                            <div>
+                                <span>{{ contacts[currentContact].name }}</span><br>
+                                <span class="access">Ultimo accesso oggi alle </span>
+                            </div>
+                        </div>
+
+                        <div class="right-contact">
+                            <div class="user-icons">
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </span>
+                                <span class="ms-icon">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- chat -->
+                    <div class="chat">
+                        <div class="messages-container">
+                            <div v-for="(message,index) in contacts[currentContact].messages" class="message" :class="{ 'sent' : (message.status === 'sent')}">
+                                <div class="text-message">{{ message.text }}</div>
+                                <div class="info-message">{{ message.date }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- input message -->
+                    <div class="message-input">
+                        <div class="user-icons">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+
+                        <input v-model='newMessage'  @keyup.enter='addNewMessage()' type="text" placeholder="Scrivi un messaggio">
+
+                        <div class="user-icons">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

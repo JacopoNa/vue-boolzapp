@@ -127,6 +127,10 @@ ul {
     border-bottom: 1px solid #eaeaea;
 }
 
+.chat-list .selected {
+    background-color: #e9ebea;
+}
+
 .chat-list img {
     width: 50px;
     margin-left: 10px;
@@ -199,7 +203,7 @@ ul {
     right: 3px;
 }
 
-.messages-container .green {
+.messages-container .sent {
     background-color: #d5f9ba;
     align-self: flex-end;
 }
